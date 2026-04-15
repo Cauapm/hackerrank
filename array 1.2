@@ -1,0 +1,39 @@
+#include <iostream>
+
+void preencherarray(int array[], int tamanho){
+    for (int i = 0; i < tamanho; i++){
+        std :: cout << "Me informe o valor do array na posição " << i << ": "; 
+        std :: cin >> array[i];
+    }
+}
+
+void implementararray(int array[], int tamanho){
+    std :: cout << "Dados presente no array: [";
+    
+    for (int i = 0; i < tamanho; i++){
+        std :: cout << array[i] << " ";
+    }
+    std :: cout << ']';
+    std :: cout << '\n';
+}
+
+void inverterarray(int array[], int tamanho){
+    for (int i = 0; i < tamanho / 2; i++){
+        int temporario = array[i];
+        int j = tamanho -1 -i;
+        array[i] = array[j];
+        array[j] = temporario;
+    }
+}
+
+int main(){
+    int Tamanho = 5;
+    int Array[Tamanho];
+    
+    preencherarray(Array, Tamanho);
+    implementararray(Array, Tamanho);
+    inverterarray(Array, Tamanho);
+    implementararray(Array, Tamanho);
+
+    return 0;
+}
